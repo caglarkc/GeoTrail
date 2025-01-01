@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".AdminMenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/container"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+            android:text="Admin Menu"
+            android:textColor="@color/light_text_color"
+            android:textSize="20sp"
+            android:textStyle="italic|bold"
+            android:layout_height="wrap_content" />
+
+
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/buttonAddCountryData"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:paddingStart="8dp"
+            android:background="@drawable/admin_menu_border"
+            android:text="Add Country Data"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_height="50dp"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:paddingStart="8dp"
+            android:background="@drawable/admin_menu_border"
+            android:text="Add City Data"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_height="50dp"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:paddingStart="8dp"
+            android:background="@drawable/admin_menu_border"
+            android:text="Add Place Data"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_height="50dp"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:paddingStart="8dp"
+            android:background="@drawable/admin_menu_border"
+            android:text="Add Map"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_height="50dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:paddingStart="8dp"
+            android:background="@drawable/admin_menu_border"
+            android:text="Add Activity Data"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_height="50dp"/>
+
+
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_container"
+        android:layout_height="match_parent">
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

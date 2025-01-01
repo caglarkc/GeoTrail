@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/xxxxxxx"
+    tools:context=".LoginActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/background_color"
+        android:layout_height="350dp"/>
+
+
+    
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="EDIT PROFILE"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_height="40dp"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:background="@drawable/pencil"
+                android:layout_height="40dp"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/editTextUsername"
+            android:inputType="text"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:paddingStart="8dp"
+            android:hint="Username"
+            android:background="@drawable/border"
+            android:textStyle="italic"
+            android:textSize="22sp"
+            android:textColor="@color/dark_hint_color" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/editTextRegion"
+            android:inputType="text"
+            android:layout_height="50dp"
+            android:layout_marginBottom="15dp"
+            android:paddingStart="8dp"
+            android:hint="Region"
+            android:background="@drawable/border"
+            android:textStyle="italic"
+            android:textSize="22sp"
+            android:textColor="@color/dark_hint_color" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/textViewEmail"
+            android:layout_height="50dp"
+            android:gravity="start|center_vertical"
+            android:layout_marginBottom="15dp"
+            android:paddingStart="8dp"
+            android:hint="Email"
+            android:background="@drawable/border"
+            android:textStyle="italic"
+            android:textSize="22sp"
+            android:textColor="@color/dark_hint_color" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_height="50dp">
+
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:inputType="textPassword"
+                android:layout_height="50dp"
+                android:background="@drawable/border"
+                android:hint="Password"
+                android:paddingStart="8dp"
+                android:textColor="@color/dark_hint_color"
+                android:textSize="22sp"
+                android:textStyle="italic" />
+
+
+            <ImageButton
+                android:id="@+id/imageButtonShowPassword"
+                android:layout_width="28dp"
+                android:scaleType="fitCenter"
+                android:layout_height="28dp"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/eye_visible_icon" />
+
+        </FrameLayout>
+
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:background="@drawable/empty_button_border"
+            android:layout_gravity="center"
+            app:backgroundTint="@null"
+            android:textColor="@color/light_text_color"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_height="48dp"
+            android:text="Save" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/navigationMenuContainer"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/border"
+        android:orientation="horizontal"
+        android:layout_height="50dp">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:src="@drawable/baseline_search_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:src="@drawable/baseline_flag_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:src="@drawable/baseline_airplane_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:src="@drawable/baseline_profile_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:src="@drawable/baseline_settings_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

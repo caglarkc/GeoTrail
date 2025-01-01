@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/xxxxxxx"
+    tools:context=".CityDetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/firstpage5" />
+
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="250dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="8dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ROME,"
+                        android:textColor="@color/black"
+                        android:textSize="48sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="the capital of Italy and the Lazio region, is a historic city with 2.86 million residents, making it the most populous city in the country. Known as the Eternal City and the City of Seven Hills, Rome is considered the cradle of Western civilization and Christian culture. Within its boundaries lies Vatican City, the world's smallest country and the spiritual center of the Catholic Church. Located along the Tiber River, Rome offers a rich blend of ancient history, art, and modern life."
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/empty_save"
+                            android:scaleType="fitCenter"
+                            app:backgroundTintMode="@null" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:text="1. COLOSSEUM"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="6dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="188dp"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginEnd="6dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/firstpage7" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:text="   The capital of Italy and the Lazio region, is a historic city with 2.86 million residents, making it the most populous city in the country. Known as the Eternal City and the City of Seven Hills, Rome is considered the cradle of Western civilization and Christian culture. Within its boundaries lies Vatican City, the world's smallest country and the spiritual center of the Catholic Church. Located along the Tiber River, Rome offers a rich blend of ancient history, art, and modern life."
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Entrance fee:"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="5 Euro (2023)"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Opening hours:"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="09:00-16:30"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="CITY MAP"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/map_example"
+                        android:scaleType="fitXY"
+                        android:layout_height="228dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/navigationMenuContainer"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/border"
+        android:orientation="horizontal"
+        android:layout_height="50dp">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:src="@drawable/baseline_search_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:src="@drawable/baseline_flag_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:src="@drawable/baseline_airplane_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:src="@drawable/baseline_profile_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:src="@drawable/baseline_settings_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

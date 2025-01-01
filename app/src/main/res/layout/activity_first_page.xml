@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".FirstPageActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="GeoTrail"
+            android:textSize="52sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/world_map"
+            android:scaleType="fitCenter"
+            android:layout_height="250dp"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edit_text_background_radiused">
+
+            <ImageButton
+                android:id="@+id/imageView"
+                android:background="@android:color/transparent"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/menu_options_icon" />
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="40dp"
+                android:layout_height="wrap_content"
+                android:hint="Where to?"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_toRightOf="@id/imageView"
+                android:background="@android:color/transparent"
+                android:textColorHint="@color/dark_hint_color"
+                android:inputType="text" />
+
+
+            <ImageButton
+                android:id="@+id/imageButtonSearch"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/search_icon" />
+
+
+        </RelativeLayout>
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:id="@+id/imageButtonArrow"
+            android:layout_gravity="end"
+            android:layout_marginTop="15dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/right_arrow_icon"
+            android:layout_marginEnd="20dp"
+            android:scaleType="fitCenter"
+            android:layout_height="48dp"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/navigationMenuContainer"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/border"
+        android:orientation="horizontal"
+        android:layout_height="50dp">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:id="@+id/itemSearch"
+            android:src="@drawable/baseline_search_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:id="@+id/itemFlag"
+            android:src="@drawable/baseline_flag_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:id="@+id/itemAirPlane"
+            android:src="@drawable/baseline_airplane_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:id="@+id/itemProfile"
+            android:src="@drawable/baseline_profile_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:id="@+id/itemSettings"
+            android:src="@drawable/baseline_settings_24"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

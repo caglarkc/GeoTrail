@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "571607215688",
+    "firebase_url": "https://personal-sport-program-ab3d9-default-rtdb.firebaseio.com",
+    "project_id": "personal-sport-program-ab3d9",
+    "storage_bucket": "personal-sport-program-ab3d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571607215688:android:6cf29bf82a59191ff8727d",
+        "android_client_info": {
+          "package_name": "com.example.geotrail"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRx75CvUopMg1sL6Tzo1bSAOSxYi-Wubw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
