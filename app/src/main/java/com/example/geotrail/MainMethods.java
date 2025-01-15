@@ -3,9 +3,13 @@ package com.example.geotrail;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class MainMethods {
+
+    static HashMap<String , List<String>> countryCities = new HashMap<>();
+    static HashMap<String , List<String>> cityPlaces = new HashMap<>();
 
     public static boolean isPasswordStrongEnough(String password){
         if (password.length()<8){
@@ -56,6 +60,22 @@ public class MainMethods {
         list.add("Bosnia and Herzegovina");
         list.add("Serbia");
         return list;
+    }
+
+    public static HashMap<String, List<String>> getCountryCities() {
+        return countryCities;
+    }
+
+    public static void setCountryCities(HashMap<String, List<String>> countryCities) {
+        MainMethods.countryCities = countryCities;
+    }
+
+    public static HashMap<String, List<String>> getCityPlaces() {
+        return cityPlaces;
+    }
+
+    public static void setCityPlaces(HashMap<String, List<String>> cityPlaces) {
+        MainMethods.cityPlaces = cityPlaces;
     }
 }
 

@@ -4,30 +4,28 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
-public class CountryAdapter extends BaseAdapter {
+public class CustomAdapter extends BaseAdapter {
     private Context context;
-    private List<String> countryList;
+    private List<String> list;
 
-    public CountryAdapter(Context context , List<String> countryList){
+    public CustomAdapter(Context context , List<String> list){
         this.context = context;
-        this.countryList = countryList;
+        this.list = list;
     }
 
     @Override
     public int getCount() {
-        return countryList != null ? countryList.size() : 0 ;
+        return list != null ? list.size() : 0 ;
     }
 
     @Override
     public Object getItem(int i) {
-        return i;
+        return list.get(i); // Artık öğeyi döndürüyor
     }
 
     @Override
@@ -37,11 +35,11 @@ public class CountryAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        View rootView = LayoutInflater.from(context).inflate(R.layout.item_country,viewGroup, false);
+        View rootView = LayoutInflater.from(context).inflate(R.layout.item,viewGroup, false);
 
         TextView textName = rootView.findViewById(R.id.name);
 
-        textName.setText(countryList.get(i));
+        textName.setText(list.get(i));
 
 
         return rootView;

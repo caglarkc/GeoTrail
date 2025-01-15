@@ -1,5 +1,6 @@
 package com.example.geotrail;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -8,20 +9,31 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class FirstPageActivity extends AppCompatActivity {
 
@@ -30,11 +42,16 @@ public class FirstPageActivity extends AppCompatActivity {
 
     AutoCompleteTextView autoCompleteTextView;
     ImageButton imageButtonArrow, imageButtonSearch, itemSearch, itemFlag, itemAirPlane, itemProfile,
-    itemSettings;
+    itemSettings, imageButtonCountries;
+    ConstraintLayout main;
+    LinearLayout countryNamesContainer;
 
     String sharedUserUid;
     boolean isLogin;
 
+    List<String> countryList = new ArrayList<>();
+
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,14 +68,15 @@ public class FirstPageActivity extends AppCompatActivity {
         imageButtonSearch = findViewById(R.id.imageButtonSearch);
         itemSearch = findViewById(R.id.itemSearch);
         itemFlag = findViewById(R.id.itemFlag);
-
+        imageButtonCountries = findViewById(R.id.imageButtonCountries);
         itemAirPlane = findViewById(R.id.itemAirPlane);
         itemProfile = findViewById(R.id.itemProfile);
         itemSettings = findViewById(R.id.itemSettings);
+        main = findViewById(R.id.main);
+        countryNamesContainer = findViewById(R.id.countryNamesContainer);
 
         sharedUser = getSharedPreferences("user_data",MODE_PRIVATE);
         sharedUserUid = sharedUser.getString("user_uid","");
-        Log.d("EREBUS",sharedUserUid);
 
 
         if (sharedUserUid.equals("")) {
@@ -72,38 +90,9 @@ public class FirstPageActivity extends AppCompatActivity {
                 "Belgium" , "Bosnia and Herzegovina" , "Serbia"
         };
 
-        /**
-         * Normalde bütün ülkeler eklenicek ama şuanlık demo oldugu için sadece 10 ülkenin datasını ekleyeceğiz...
-         */
-        /*
-        String[] countries = {
-                "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia",
-                "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus",
-                "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil",
-                "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada",
-                "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo (Congo-Brazzaville)",
-                "Congo (Democratic Republic)", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic (Czechia)",
-                "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
-                "Eritrea", "Estonia", "Eswatini (fmr. \"Swaziland\")", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
-                "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana",
-                "Haiti", "Holy See", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland",
-                "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea (North)",
-                "Korea (South)", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya",
-                "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta",
-                "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia",
-                "Montenegro", "Morocco", "Mozambique", "Myanmar (formerly Burma)", "Namibia", "Nauru", "Nepal", "Netherlands",
-                "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Macedonia (formerly Macedonia)", "Norway", "Oman",
-                "Pakistan", "Palau", "Palestine State", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines",
-                "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia",
-                "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal",
-                "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia",
-                "South Africa", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria",
-                "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia",
-                "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom",
-                "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam",
-                "Yemen", "Zambia", "Zimbabwe"
-        };
-         */
+        //Normalde bütün ülkeler eklenicek ama şuanlık demo oldugu için sadece 10 ülkenin datasını ekleyeceğiz...
+
+        countryList = Arrays.asList(countries);
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
@@ -126,7 +115,7 @@ public class FirstPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (isLogin) {
-                    Intent intent = new Intent(FirstPageActivity.this,MyRoutesActivity.class);
+                    Intent intent = new Intent(FirstPageActivity.this,SavingsActivity.class);
                     startActivity(intent);
                     finish();
                 }else {
@@ -139,7 +128,7 @@ public class FirstPageActivity extends AppCompatActivity {
         itemAirPlane.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FirstPageActivity.this,CityExploringActivity.class);
+                Intent intent = new Intent(FirstPageActivity.this,CityDetailsActivity.class);
                 intent.putExtra("search","random");
                 startActivity(intent);
                 finish();
@@ -172,13 +161,53 @@ public class FirstPageActivity extends AppCompatActivity {
         });
 
 
+        countryNamesContainer.setVisibility(View.GONE);
+        for (String country : countryList) {
+            // TextView (Başlangıçta görünmez olacak)
+            TextView cityListTextView = new TextView(this);
+            cityListTextView.setLayoutParams(new ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+            ));
+            cityListTextView.setTextColor(Color.WHITE);
+            cityListTextView.setTextSize(16);
+            cityListTextView.setText(country);
+
+            countryNamesContainer.addView(cityListTextView);
+
+        }
+
+
+
+
+        imageButtonCountries.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (countryNamesContainer.getVisibility() == View.GONE) {
+                    countryNamesContainer.setVisibility(View.VISIBLE);
+                } else {
+                    countryNamesContainer.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        // Ana Layout'a Tıklama Olayı (TextView'i Kapatmak İçin)
+        main.setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                if (countryNamesContainer.getVisibility() == View.VISIBLE) {
+                    countryNamesContainer.setVisibility(View.GONE);
+                }
+            }
+            return false;
+        });
+
         imageButtonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String locationTxt = autoCompleteTextView.getText().toString();
-                if (!TextUtils.isEmpty(locationTxt)) {
+                if (!TextUtils.isEmpty(locationTxt) && countryList.contains(locationTxt)) {
                     Intent intent = new Intent(FirstPageActivity.this, CityExploringActivity.class);
-                    intent.putExtra("search",locationTxt);
+                    intent.putExtra("country",locationTxt);
                     startActivity(intent);
                     finish();
                 }else {

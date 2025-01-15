@@ -1,232 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/xxxxxxx"
     tools:context=".MyRoutesActivity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:id="@+id/whitePage"
-        android:layout_height="90dp"
-        android:background="@color/white"/>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:id="@+id/progressBar"
+        android:indeterminateDrawable="@drawable/custom_progress_bar"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:orientation="vertical"
+        android:id="@+id/containerLayout"
+        android:layout_height="match_parent">
 
-        <Button
-            android:layout_width="0dp"
-            android:text="My Routes"
-            android:background="@drawable/white_background_wave"
-            android:textAllCaps="false"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
-
-
-        <Button
-            android:layout_width="0dp"
-            android:text="Savings"
-            android:background="@drawable/gray_background_wave"
-            android:textAllCaps="false"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_height="200dp">
-
-        <ImageButton
+        <FrameLayout
             android:layout_width="match_parent"
-            android:src="@drawable/map_example"
-            android:scaleType="fitXY"
-            android:layout_height="200dp"/>
+            android:id="@+id/whitePage"
+            android:background="@color/background_color"
+            android:layout_height="90dp">
 
-    </androidx.cardview.widget.CardView>
+            <Spinner
+                android:layout_width="wrap_content"
+                android:paddingEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/admin_menu_border"
+                android:id="@+id/spinnerCity"
+                android:layout_gravity="start|center_vertical"
+                android:paddingStart="3dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_height="wrap_content"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="0dp"
+                android:text="My Routes"
+                android:textColor="@color/white"
+                android:background="@drawable/dark_background_wave"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
 
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp">
+            <Button
+                android:layout_width="0dp"
+                android:text="Savings"
+                android:textColor="@color/white"
+                android:background="@drawable/light_background_wave"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
 
-
+        </LinearLayout>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="20dp"
             android:layout_marginStart="15dp"
-            android:layout_height="match_parent">
+            android:layout_marginEnd="15dp"
+            android:layout_height="200dp">
 
-            <ScrollView
+            <ImageView
                 android:layout_width="match_parent"
-                android:scrollbars="vertical"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:fadeScrollbars="false"
+                android:src="@drawable/map_example"
+                android:id="@+id/imageViewMap"
+                android:padding="8dp"
+                android:scaleType="fitXY"
+                android:layout_height="200dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp">
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="15dp"
                 android:layout_height="match_parent">
 
-                <LinearLayout
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:orientation="vertical"
+                    android:scrollbars="vertical"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:fadeScrollbars="false"
                     android:layout_height="match_parent">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical"
+                        android:id="@+id/container"
+                        android:layout_height="match_parent">
 
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_marginTop="3dp"
-                            android:layout_marginStart="3dp"
-                            android:padding="4dp"
-                            android:layout_marginEnd="1dp"
-                            android:src="@drawable/menu_icon"
-                            android:background="@drawable/menu_icon_border"
-                            android:scaleType="fitXY"
-                            android:layout_height="30dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:background="@drawable/menu_icon_border"
-                            android:layout_marginTop="3dp"
-                            android:layout_marginEnd="3dp"
-                            android:text="1. COLOSSEUM"
-                            android:gravity="center_vertical"
-                            android:paddingStart="5dp"
-                            android:layout_height="match_parent"/>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                </ScrollView>
 
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_marginStart="3dp"
-                            android:padding="4dp"
-                            android:layout_marginEnd="1dp"
-                            android:src="@drawable/menu_icon"
-                            android:background="@color/xxxxxxx"
-                            android:scaleType="fitXY"
-                            android:layout_height="30dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:background="@color/xxxxxxx"
-                            android:layout_marginEnd="3dp"
-                            android:text="1. COLOSSEUM"
-                            android:gravity="center_vertical"
-                            android:paddingStart="5dp"
-                            android:layout_height="match_parent"/>
-                    </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
 
+            <ImageButton
+                android:layout_width="50dp"
+                android:src="@drawable/play_button"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="bottom|end"
+                android:background="@android:color/transparent"
+                android:elevation="10dp"
+                android:scaleType="fitXY"
+                android:layout_height="50dp"/>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+        </FrameLayout>
 
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_marginStart="3dp"
-                            android:padding="4dp"
-                            android:layout_marginEnd="1dp"
-                            android:src="@drawable/menu_icon"
-                            android:background="@color/xxxxxxx"
-                            android:scaleType="fitXY"
-                            android:layout_height="30dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:background="@color/xxxxxxx"
-                            android:layout_marginEnd="3dp"
-                            android:text="1. COLOSSEUM"
-                            android:gravity="center_vertical"
-                            android:paddingStart="5dp"
-                            android:layout_height="match_parent"/>
-                    </LinearLayout>
-
-
-
-
-                </LinearLayout>
-
-            </ScrollView>
-
-        </androidx.cardview.widget.CardView>
-
-
-        <ImageButton
-            android:layout_width="50dp"
-            android:src="@drawable/play_button"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
-            android:layout_gravity="bottom|end"
-            android:background="@android:color/transparent"
-            android:elevation="10dp"
-            android:scaleType="fitXY"
-            android:layout_height="50dp"/>
+            android:background="@drawable/border"
+            android:orientation="horizontal"
+            android:layout_height="50dp">
 
-    </FrameLayout>
+            <ImageButton
+                android:layout_width="0dp"
+                android:id="@+id/itemSearch"
+                android:src="@drawable/baseline_search_24"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_height="50dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/border"
-        android:orientation="horizontal"
-        android:layout_height="50dp">
+            <ImageButton
+                android:layout_width="0dp"
+                android:id="@+id/itemFlag"
+                android:src="@drawable/baseline_flag_24"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_height="50dp"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:src="@drawable/baseline_search_24"
-            android:background="@android:color/transparent"
-            android:layout_weight="1"
-            android:layout_height="50dp"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:id="@+id/itemAirPlane"
+                android:src="@drawable/baseline_airplane_24"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_height="50dp"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:src="@drawable/baseline_flag_24"
-            android:background="@android:color/transparent"
-            android:layout_weight="1"
-            android:layout_height="50dp"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:id="@+id/itemProfile"
+                android:src="@drawable/baseline_profile_24"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_height="50dp"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:src="@drawable/baseline_airplane_24"
-            android:background="@android:color/transparent"
-            android:layout_weight="1"
-            android:layout_height="50dp"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:id="@+id/itemSettings"
+                android:src="@drawable/baseline_settings_24"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_height="50dp"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:src="@drawable/baseline_profile_24"
-            android:background="@android:color/transparent"
-            android:layout_weight="1"
-            android:layout_height="50dp"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:src="@drawable/baseline_settings_24"
-            android:background="@android:color/transparent"
-            android:layout_weight="1"
-            android:layout_height="50dp"/>
-
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -240,4 +203,6 @@
 
 
 
-</LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

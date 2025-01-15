@@ -1,466 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/xxxxxxx"
     tools:context=".SavingsActivity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:id="@+id/whitePage"
-        android:layout_height="90dp"
-        android:background="@color/white"/>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:id="@+id/progressBar"
+        android:indeterminateDrawable="@drawable/custom_progress_bar"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:orientation="vertical"
+        android:layout_height="match_parent">
 
-        <Button
-            android:layout_width="0dp"
-            android:text="My Routes"
-            android:background="@drawable/gray_background_wave"
-            android:textAllCaps="false"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
-
-
-        <Button
-            android:layout_width="0dp"
-            android:text="Savings"
-            android:background="@drawable/white_background_wave"
-            android:textAllCaps="false"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_weight="1"
-        android:layout_marginBottom="10dp"
-        android:layout_height="0dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/whitePage"
+            android:layout_height="90dp"
+            android:background="@color/background_color"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:id="@+id/parentContainer"
+            android:orientation="horizontal"
             android:layout_height="wrap_content">
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="15dp"
-                android:id="@+id/countryContainer"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_height="wrap_content">
-
-                    <ImageButton
-                        android:layout_width="36dp"
-                        android:src="@drawable/down_arrow"
-                        android:scaleType="fitXY"
-                        android:background="@android:color/transparent"
-                        android:layout_height="36dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:text="ITALY"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:textSize="24sp"
-                        android:layout_height="match_parent"/>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:id="@+id/cityContainer"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="30dp"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:layout_height="wrap_content">
-
-                        <ImageButton
-                            android:layout_width="36dp"
-                            android:src="@drawable/down_arrow"
-                            android:scaleType="fitXY"
-                            android:background="@android:color/transparent"
-                            android:layout_height="36dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:text="COLOSSEUM"
-                            android:textColor="@color/black"
-                            android:textSize="24sp"
-                            android:gravity="center"
-                            android:layout_height="match_parent"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="154dp" >
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="250dp"
-                            android:layout_height="150dp">
-
-                            <ImageView
-                                android:layout_width="242dp"
-                                android:layout_marginStart="4dp"
-                                android:layout_marginTop="4dp"
-                                android:src="@drawable/firstpage6"
-                                android:scaleType="fitXY"
-                                android:layout_height="142dp"/>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_marginStart="5dp"
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:text="   asdaösmkldasldlökfaşlaasdsadasdasasdasdasdasdskşsfidaöşlskfşfvlsösfasdsakdfmelsöşmklfkşkmşasndlkfşmsfkamldsakfdkasldfölşkmsaşfsdlfsadsa"
-                            android:layout_height="match_parent"/>
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:text="ALSŞÖDSAŞSKMDFLÖSSİKMFALÖEFLİMDSÖÇÖÇFCLAKDSFŞALSİFLŞÖASLİDFALSŞÖDSAŞSKMDFLÖSSİKMFALÖEFLİMDSÖÇÖÇFCLAKDSFŞALSİFLŞÖASLİDF"
-                        android:layout_height="match_parent"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:orientation="vertical"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Entrance fee:"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
-                            android:text="5 Euro (2023)"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Opening hours:"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
-                            android:text="09:00-16:30"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:id="@+id/cityContainer3"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="30dp"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:layout_height="wrap_content">
-
-                        <ImageButton
-                            android:layout_width="36dp"
-                            android:src="@drawable/down_arrow"
-                            android:scaleType="fitXY"
-                            android:background="@android:color/transparent"
-                            android:layout_height="36dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:text="COLOSSEUM"
-                            android:textColor="@color/black"
-                            android:textSize="24sp"
-                            android:gravity="center"
-                            android:layout_height="match_parent"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="154dp" >
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="250dp"
-                            android:layout_height="150dp">
-
-                            <ImageView
-                                android:layout_width="242dp"
-                                android:layout_marginStart="4dp"
-                                android:layout_marginTop="4dp"
-                                android:src="@drawable/firstpage6"
-                                android:scaleType="fitXY"
-                                android:layout_height="142dp"/>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_marginStart="5dp"
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:text="   asdaösmkldasldlökfaşlaasdsadasdasasdasdasdasdskşsfidaöşlskfşfvlsösfasdsakdfmelsöşmklfkşkmşasndlkfşmsfkamldsakfdkasldfölşkmsaşfsdlfsadsa"
-                            android:layout_height="match_parent"/>
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:text="ALSŞÖDSAŞSKMDFLÖSSİKMFALÖEFLİMDSÖÇÖÇFCLAKDSFŞALSİFLŞÖASLİDFALSŞÖDSAŞSKMDFLÖSSİKMFALÖEFLİMDSÖÇÖÇFCLAKDSFŞALSİFLŞÖASLİDF"
-                        android:layout_height="match_parent"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:orientation="vertical"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Entrance fee:"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
-                            android:text="5 Euro (2023)"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Opening hours:"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
-                            android:text="09:00-16:30"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:id="@+id/cityContainer2"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="30dp"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:layout_height="wrap_content">
-
-                        <ImageButton
-                            android:layout_width="36dp"
-                            android:src="@drawable/down_arrow"
-                            android:scaleType="fitXY"
-                            android:background="@android:color/transparent"
-                            android:layout_height="36dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:text="COLOSSEUM"
-                            android:textColor="@color/black"
-                            android:textSize="24sp"
-                            android:gravity="center"
-                            android:layout_height="match_parent"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="154dp" >
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="250dp"
-                            android:layout_height="150dp">
-
-                            <ImageView
-                                android:layout_width="242dp"
-                                android:layout_marginStart="4dp"
-                                android:layout_marginTop="4dp"
-                                android:src="@drawable/firstpage6"
-                                android:scaleType="fitXY"
-                                android:layout_height="142dp"/>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_marginStart="5dp"
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:text="   asdaösmkldasldlökfaşlaasdsadasdasasdasdasdasdskşsfidaöşlskfşfvlsösfasdsakdfmelsöşmklfkşkmşasndlkfşmsfkamldsakfdkasldfölşkmsaşfsdlfsadsa"
-                            android:layout_height="match_parent"/>
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:text="ALSŞÖDSAŞSKMDFLÖSSİKMFALÖEFLİMDSÖÇÖÇFCLAKDSFŞALSİFLŞÖASLİDFALSŞÖDSAŞSKMDFLÖSSİKMFALÖEFLİMDSÖÇÖÇFCLAKDSFŞALSİFLŞÖASLİDF"
-                        android:layout_height="match_parent"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:orientation="vertical"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Entrance fee:"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
-                            android:text="5 Euro (2023)"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Opening hours:"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
-                            android:text="09:00-16:30"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
+            <Button
+                android:layout_width="0dp"
+                android:id="@+id/buttonMyRoutes"
+                android:text="My Routes"
+                android:textColor="@color/white"
+                android:background="@drawable/light_background_wave"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+
+
+            <Button
+                android:layout_width="0dp"
+                android:text="Savings"
+                android:textColor="@color/white"
+                android:background="@drawable/dark_background_wave"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
 
-    </ScrollView>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:id="@+id/navigationMenuContainer"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/border"
-        android:orientation="horizontal"
-        android:layout_height="50dp">
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:src="@drawable/baseline_search_24"
-            android:background="@android:color/transparent"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
             android:layout_weight="1"
-            android:layout_height="50dp"/>
+            android:layout_marginBottom="10dp"
+            android:layout_height="0dp">
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:src="@drawable/baseline_flag_24"
-            android:background="@android:color/transparent"
-            android:layout_weight="1"
-            android:layout_height="50dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/container"
+                android:layout_height="wrap_content">
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:src="@drawable/baseline_airplane_24"
-            android:background="@android:color/transparent"
-            android:layout_weight="1"
-            android:layout_height="50dp"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:src="@drawable/baseline_profile_24"
-            android:background="@android:color/transparent"
-            android:layout_weight="1"
-            android:layout_height="50dp"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:src="@drawable/baseline_settings_24"
-            android:background="@android:color/transparent"
-            android:layout_weight="1"
-            android:layout_height="50dp"/>
+            </LinearLayout>
 
+
+        </ScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/navigationMenuContainer"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/border"
+            android:orientation="horizontal"
+            android:layout_height="50dp">
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:id="@+id/itemSearch"
+                android:src="@drawable/baseline_search_24"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_height="50dp"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:id="@+id/itemFlag"
+                android:src="@drawable/baseline_flag_24"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_height="50dp"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:id="@+id/itemAirPlane"
+                android:src="@drawable/baseline_airplane_24"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_height="50dp"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:id="@+id/itemProfile"
+                android:src="@drawable/baseline_profile_24"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_height="50dp"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:id="@+id/itemSettings"
+                android:src="@drawable/baseline_settings_24"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_height="50dp"/>
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -468,4 +140,6 @@
 
 
 
-</LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

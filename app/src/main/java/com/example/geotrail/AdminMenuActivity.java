@@ -12,11 +12,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class AdminMenuActivity extends AppCompatActivity {
 
-    Button buttonAddCountryData;
+    Button buttonAddCountryData, buttonAddCityData, buttonAddPlaceData, buttonAddMap, buttonAddActivityData;
     LinearLayout container;
 
     @Override
@@ -31,6 +32,10 @@ public class AdminMenuActivity extends AppCompatActivity {
         });
 
         buttonAddCountryData = findViewById(R.id.buttonAddCountryData);
+        buttonAddCityData = findViewById(R.id.buttonAddCityData);
+        buttonAddPlaceData = findViewById(R.id.buttonAddPlaceData);
+        buttonAddMap = findViewById(R.id.buttonAddMap);
+        buttonAddActivityData = findViewById(R.id.buttonAddActivityData);
         container = findViewById(R.id.container);
 
         buttonAddCountryData.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +47,45 @@ public class AdminMenuActivity extends AppCompatActivity {
 
             }
         });
+
+        buttonAddCityData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                container.setVisibility(View.GONE);
+                Fragment fragment = new AddCityDataFragment();
+                goToFragment(fragment);
+            }
+        });
+
+        buttonAddPlaceData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                container.setVisibility(View.GONE);
+                Fragment fragment = new AddPlaceDataFragment();
+                goToFragment(fragment);
+            }
+        });
+
+
+        buttonAddMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                container.setVisibility(View.GONE);
+                Fragment fragment = new AddMapFragment();
+                goToFragment(fragment);
+            }
+        });
+
+
+        buttonAddActivityData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                container.setVisibility(View.GONE);
+                Fragment fragment = new AddActivityDataFragment();
+                goToFragment(fragment);
+            }
+        });
+
     }
 
     private void goToFragment(Fragment fragment) {
@@ -55,5 +99,19 @@ public class AdminMenuActivity extends AppCompatActivity {
         transaction.replace(R.id.fragment_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        if (fragmentManager.getBackStackEntryCount() > 0) {
+            fragmentManager.popBackStack();
+            container.setVisibility(View.VISIBLE);
+        } else {
+            // Fragment yoksa LoginActivity'e yönlendir
+            Intent intent = new Intent(AdminMenuActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }

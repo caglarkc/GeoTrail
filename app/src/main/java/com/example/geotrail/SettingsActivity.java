@@ -16,7 +16,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SettingsActivity extends AppCompatActivity {
+    FirebaseAuth mAuth;
 
     SharedPreferences sharedUser;
 
@@ -36,6 +39,8 @@ public class SettingsActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        mAuth = FirebaseAuth.getInstance();
 
         buttonDarkMode = findViewById(R.id.buttonDarkMode);
         buttonSuggestLocation = findViewById(R.id.buttonSuggestLocation);
@@ -63,6 +68,7 @@ public class SettingsActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedUser.edit();
                     editor.remove("user_uid");
                     editor.apply();
+                    mAuth.signOut();
                     Toast.makeText(SettingsActivity.this,"",Toast.LENGTH_SHORT).show();
                 }else {
                     Intent intent = new Intent(SettingsActivity.this, LoginActivity.class);

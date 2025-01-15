@@ -30,6 +30,9 @@ android {
 
 dependencies {
     implementation platform(libs.firebase.bom)
+    implementation libs.github.glide
+    //noinspection UseTomlInstead
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
     implementation libs.firebase.analytics
     implementation libs.material.v180
     implementation libs.appcompat
@@ -39,7 +42,6 @@ dependencies {
     implementation libs.firebase.auth
     implementation libs.firebase.database
     implementation libs.firebase.storage
-    implementation libs.firebase.firestore
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
